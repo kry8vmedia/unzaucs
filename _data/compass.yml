@@ -1,0 +1,8 @@
+require:
+- jekyll-compass
+project_path: {{ site.url }}
+http_path: "/"
+css_dir: _assets/css
+sass_dir: _assets/sass
+#images_dir: images
+javascripts_dir: _assets/js

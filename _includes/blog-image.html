@@ -1,0 +1,5 @@
+{% capture name %}{{ include.name }}{% endcapture %}
+<figure class="figure blog-figure" style ="float: {{ include.side }};">  
+<img data-src="https://res.cloudinary.com/krvmedia/c_limit,w_auto,dpr_auto,f_auto,q_auto/{{ site.data.blog-images[name].img-src}}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="cld-responsive blog-image" title="{{ site.data.blog-images[name].title }}" alt="{{ site.data.blog-images[name].alt }}" />
+<figcaption class="figure-caption text-center">{{ site.data.blog-images[name].caption }}</figcaption>
+</figure>

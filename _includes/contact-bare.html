@@ -1,0 +1,104 @@
+<form id="contact-form">
+  <div class="form-group">
+    <label class="sr-only" for="inputName">Name</label>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+      <input id="inputName" class="form-control" type="text" name="name" placeholder="What's your full name?" required />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="sr-only" for="inputEmailAddress">Email Address</label>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+      <input id="inputEmail" class="form-control" type="email" name="_replyto" placeholder="What's your email address?" required />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="sr-only" for="inputSubject">Subject</label>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-question fa-fw"></i></span>
+      <input id="inputSubject" name="form-subject-input" type="text" name="subject" class="form-control" required placeholder="What's the purpose of your message? i.e Subject" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="sr-only" for="inputMessage">Message</label>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
+      <textarea id="inputMessage" class="form-control" rows="5" name="message" placeholder="What would you like us to know?" required></textarea>
+    </div>
+  </div>
+
+  <input type="text" name="_gotcha" style="display:none" />
+  <div class="form-group">
+    <button id="sendMessage" type="submit" class="btn btn-warning" value="Send"><i class="fa fa-send fa-fw"></i>Send
+    </button>
+    
+  </div>
+  <input type="hidden" name="_next" value="{{ site.url }}/message-sent"/>
+
+</form>
+
+<script>
+  var contactform =  document.getElementById('contact-form');
+      contactform.setAttribute('action', '//formspree.io/' + 'contact' + '@' + 'krvmedia' + '.' + 'com');
+      contactform.setAttribute('method', 'POST');
+
+</script>
+
+<!--
+      var contactform =  document.getElementById('contactform');
+    contactform.setAttribute('action', '//formspree.io/' +);
+
+  
+  var $contactForm = $('#contact-form');
+    $contactForm.submit(function(e) {
+      e.preventDefault();
+      $.ajax({
+        url: ',
+        method: 'POST',
+        data: $(this).serialize(),
+        dataType: 'json',
+        beforeSend: function() {
+          $contactForm.append('<div class="alert alert--loading">Sending message…</div>');
+        },
+        success: function(data) {
+          $contactForm.find('.alert--loading').hide();
+          $contactForm.append('<div class="alert alert--success">Message sent!</div>');
+        },
+        error: function(err) {
+          $contactForm.find('.alert--loading').hide();
+          $contactForm.append('<div class="alert alert--error">Oops, there was an error.</div>');
+        }
+      });
+    });
+    
+    $(document).ready(function() {
+  $('#contact-form').submit(function(e) {
+      var name = $('#inputName')
+      var email = $('#inputEmail')
+      var message = $('#inputMessage')
+    
+      if(name.val() == "" || email.val() == "" || message.val() == "") {
+        $('.submit-fail').fadeToggle(400);
+        return false;
+      }
+      else {
+        $.ajax({
+          method: 'POST',
+          url: ,
+          data: $('#contact-form').serialize(),
+          datatype: 'json'
+        });
+        e.preventDefault();
+        $(this).get(0).reset();
+        $('.submit-success').fadeToggle(400);
+      }
+    });
+  
+  $('.submit-fail, .submit-success').click(function() {
+    $(this).hide();
+  })
+});-->

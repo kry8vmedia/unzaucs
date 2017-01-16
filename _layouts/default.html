@@ -1,0 +1,30 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include head.html %}
+
+  <!-- Hide Address Bar -->
+  <!-- setTimeout(function() { window.scrollTo(0, 1) }, 100); -->
+  <body{% if page.page-id %} id="{{ page.page-id }}"{% endif %}{% if page.bodybg %} class="{{ page.bodybg }}"{% endif %} >
+    <div id="destination-top"></div>
+
+    {% unless page.no-footer-nav %}
+      {% include navbar.html %}
+    {% endunless %}
+
+    <div class="content {{ page.extra }} {{ page.page-div }}">
+      {{ content }}
+    </div>
+
+
+    {% unless page.no-footer or page.no-footer-nav %}
+      {% include foot.html %}
+    {% endunless %}
+
+    {% include scripts.html %}
+    
+  </body>
+</html>

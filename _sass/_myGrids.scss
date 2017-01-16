@@ -1,0 +1,100 @@
+@import "bs/bootstrap/mixins/grid";
+/*Grids*/
+.full-width-column {
+    @include make-sm-column(12);
+}
+
+.video-column {
+    @include make-sm-column(6);
+}
+
+.half-width-column {
+    @include make-sm-column(5);
+    @include make-sm-column-offset(1);
+}
+
+.third-width-column {
+    @include make-sm-column(8);
+    @include make-sm-column-offset(2);
+}
+
+.btn-column {
+    @include make-sm-column(3);
+}
+
+div.license-column {
+    &.right {
+        @include make-md-column(4);
+        @include make-md-column-push(4);
+    }
+    &.left {
+        @include make-md-column(4);
+        @include make-md-column-pull(4);
+    }
+    &.last-bottom {
+        @include make-md-column(4);
+    }
+}
+
+//Showcase columns
+.showcase-column {
+    @include make-lg-column(4);
+}
+
+.left-column {
+    @include make-lg-column(5);
+    margin: 20px 0;
+}
+.right-column {
+    @include make-lg-column(5);
+    @include make-lg-column-offset(2);
+    margin: 20px 0;
+}
+
+//Home page
+.header-column {
+    @include make-lg-column(12);
+}
+
+#who {
+    .column {
+        @include make-sm-column(6); 
+
+        &.right {
+            @include make-sm-column-push(6);
+        }
+        &.left {
+            @include make-sm-column-pull(6);
+        }
+    }    
+}
+
+#what {
+    .left-column {
+        @include make-sm-column(6);        
+        @include make-lg-column(5);
+    }
+    .right-column {
+        @include make-sm-column(6); 
+        @include make-lg-column(5);
+    }
+}
+
+.parallax .left-column {
+    @include make-sm-column(6);
+}
+
+//Blog page
+.article {
+    @include make-sm-column(8);
+    margin-bottom: 50px;
+}
+
+.sidebar-column {
+    @include make-sm-column(4);
+}
+
+.solitary-column {
+    @include make-sm-column(6);
+    @include make-sm-column-offset(3);
+}

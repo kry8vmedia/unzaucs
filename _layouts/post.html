@@ -1,0 +1,49 @@
+---
+layout: blog
+post: true
+---
+
+<div class="post-image">
+  <img data-src="https://res.cloudinary.com/krvmedia/c_fill,w_auto,dpr_auto,f_auto,q_auto/{{ page.img }}" src="{{ site.url }}/img/loading.jpg" class="cld-responsive img-responsive featured-image" title="{{ page.title }}" alt="{{ page.title }}" />
+  <h1>{{ page.title }}</h1>
+</div>
+
+{% assign author = site.data.authors[page.author] %}
+<br />
+<br />
+
+<p class="text-center text-capitalize post-spacing">
+  <a target="_blank" href="https://twitter.com/{{ site.data.authors[page.author].twitter }}"><img class="img-circle" style="width: 4.7em;" src="{{ author.picture }}" alt="{{ site.data.authors[page.author].name }}" title="{{ site.data.authors[page.author].name }}" /></a> {{ author.display_name }} posted this on <span class="post-meta">{{ page.date | date: "%a, %-d %B, %Y" }}</span> | {{ page.content | reading_time }} reading time | <a href="{{ page.url | prepend: site.url | append: "#disqus_thread" }}"></a>
+</p>
+
+{{ content }}
+<br />
+
+{% if page.tags.size > 0 %}
+  <p><small><span><i class="fa fa-tags fa-fw"></i></span>
+      {% for tag in page.tags  %}
+      <a href="{{ site.url }}/archive/tags/{{ tag }}">{{ tag }}</a>
+      {% endfor %}
+  </small></p>
+{% endif %}
+
+{% if page.categories.size > 0 %}
+  <p><small><span><i class="fa fa-folder-open fa-fw"></i></span>
+      {% for category in page.categories  %}
+      <a href="{{ site.url }}/archive/categories/{{ category }}">{{ category }}</a>
+      {% endfor %}
+  </small></p>
+{% endif %}
+
+{% if page.tags.size > 0 or page.categories.size > 0%}
+  <br />
+{% endif %}
+
+{% include share.html %}
+
+<!--{% include related-posts.html %}-->
+
+{% if page.comments %}
+  {% include disqus.html %}
+{% endif %}
+

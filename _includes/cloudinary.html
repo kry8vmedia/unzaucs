@@ -1,0 +1,11 @@
+<img
+  src="https://res.cloudinary.com/krvmedia/c_limit,w_800,q_60,f_auto/{{ include.img }}"
+  srcset="
+    https://res.cloudinary.com/krvmedia/c_limit,w_320,q_60,f_auto/{{ include.img }} 320w,
+    https://res.cloudinary.com/krvmedia/c_limit,w_640,q_60,f_auto/{{ include.img }} 640w,
+    https://res.cloudinary.com/krvmedia/c_limit,w_960,q_60,f_auto/{{ include.img }} 960w,
+    https://res.cloudinary.com/krvmedia/c_limit,w_1280,q_60,f_auto/{{ include.img }} 1280w,
+    https://res.cloudinary.com/krvmedia/c_limit,w_1600,q_60,f_auto/{{ include.img }} 1600w,
+    https://res.cloudinary.com/krvmedia/c_limit,w_1920,q_60,f_auto/{{ include.img }} 1920w"
+  sizes="(min-width: {{ include.size }}rem) {{ include.size }}rem, {{ include.vw }}vw" class="{{ include.class }}" title="{{ include.title }}" alt="{{ include.alt }}" {% if w %}width="{{ include.w }}"{% endif %} {% if h %}height="{{ include.h }}"{% endif %}
+/>

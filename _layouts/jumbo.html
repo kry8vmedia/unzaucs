@@ -1,0 +1,15 @@
+---
+layout: default
+jumbo: true
+---
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div id="header" class="{{ page.pageClass }}">
+  <div class="container">
+    <h1>{{ page.headline }}</h1>
+    {%if page.tagline %}<p class="tag-line" >{{ page.tagline }}</p>{% endif %}
+    <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Contact Us &raquo;</a></p>-->
+  </div>
+</div>
+
+{{ content }}

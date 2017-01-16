@@ -1,0 +1,36 @@
+<!-- Navigation -->
+{% if page.home %}
+	<nav id="home-nav" class="main-nav navbar-inverse" data-spy="affix" data-offset-top="673" role="navigation">
+{% else %}
+	<nav id="page-nav" class="main-nav navbar-inverse navbar-fixed-top default-nav" role="navigation">
+{% endif %}
+		<div class="container topnav">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand topnav" href="/#header"><img data-src="https://res.cloudinary.com/krvmedia/c_limit,w_auto,dpr_auto,f_auto/logos/web-logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="cld-responsive branding" title="Kry8v Media Web Logo" alt="Kry8v Media Web Logo" /></a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					{% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}
+					{% for p in navigation_pages %}
+						{% if p.navigation_weight %}
+							<li>
+								<a href="{{ p.url }}" {% if p.url == page.url %} class="active" {% endif %}>{{ p.title }}</a>
+							</li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+		<span class="uline-div"><hr class="uline"></span>
+	</nav>
+	<!-- /.Navigation -->

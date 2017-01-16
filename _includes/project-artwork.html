@@ -1,0 +1,2 @@
+{% capture name %}{{ page.image-name }}{% endcapture %}
+<img style ="float: {{ include.side }};" data-src="https://res.cloudinary.com/krvmedia/c_fill,w_150,dpr_auto,f_auto,q_auto/{{ site.data.blog-images[name].img-src}}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="cld-responsive project-artwork" title="{{ site.data.blog-images[name].title }}" alt="{{ site.data.blog-images[name].alt }}" />

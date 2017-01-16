@@ -1,0 +1,2 @@
+//Typography
+@mixin text-shadow($alpha-amount: 0.6) { text-shadow: 2px 2px 3px rgba(0, 0, 0, $alpha-amount); }
