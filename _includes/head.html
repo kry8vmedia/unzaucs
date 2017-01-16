@@ -8,15 +8,6 @@
   <script src="{% asset_path head.js %}"></script>
   {% capture critical %}{% include critical.min.scss %}{% endcapture %}
   <link rel="stylesheet" href="{{ site.url }}/css/un.style.css">
-  <style>
-    {{ critical | scssify }}
-    {% if page.home %}
-      {% capture homecriticalcss %}
-        {% include homecritical.scss %}
-      {% endcapture %}
-      {{ homecriticalcss | scssify }}
-    {% endif %}
-  </style>
   
   <link rel="shortcut icon" href="{{ site.url }}/img/icons/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="{{ site.url }}/img/icons/apple-touch-icon.png" />
